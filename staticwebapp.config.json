@@ -1,0 +1,19 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/data.js", "/images/*.{png,jpg,gif}"]
+  },
+  "routes": [
+    {
+      "route": "/",
+      "serve": "/index.html"
+    }
+  ],
+  "mimeTypes": {
+    ".js": "text/javascript",
+    ".json": "application/json"
+  },
+  "globalHeaders": {
+    "cache-control": "public, max-age=3600"
+  }
+}
