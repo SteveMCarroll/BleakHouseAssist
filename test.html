@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleak House - Data Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        .test { 
+            padding: 10px; 
+            margin: 5px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 4px;
+        }
+        .test.pass { background: #e8f5e9; border-color: green; }
+        .test.fail { background: #ffebee; border-color: red; }
+        h1 { color: #333; }
+        .summary { 
+            padding: 15px; 
+            margin: 20px 0; 
+            background: #f5f5f5; 
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        .error-details {
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff;
+            border-left: 3px solid red;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Bleak House Data Sanity Tests</h1>
+    <div id="results"></div>
+    <div id="summary" class="summary"></div>
+
+    <script src="data.js"></script>
+    <script>
+        const results = [];
+        
+        function test(name, fn) {
+            try {
+                const result = fn();
+                if (result === true) {
+                    results.push({ name, passed: true });
+                    return true;
+                } else {
+                    results.push({ name, passed: false, error: result });
+                    return false;
+                }
+            } catch (e) {
+                results.push({ name, passed: false, error: e.message });
+                return false;
+            }
+        }
+
+        function assert(condition, message) {
+            if (!condition) {
+                return message || "Assertion failed";
+            }
+            return true;
+        }
+
+        // Run tests
+        console.log("Starting sanity tests...");
+
+        // Test 1: BLEAK_HOUSE_DATA exists
+        test("BLEAK_HOUSE_DATA object exists", () => {
+            return assert(typeof BLEAK_HOUSE_DATA !== 'undefined', "BLEAK_HOUSE_DATA is not defined");
+        });
+
+        // Test 2: Has required properties
+        test("Has all required properties", () => {
+            const required = ['majorCharacters', 'circleOrder', 'chapterContext', 'chapterTitles', 'charactersByChapter', 'chapterSummaries', 'characterStories'];
+            for (const prop of required) {
+                const result = assert(BLEAK_HOUSE_DATA.hasOwnProperty(prop), `Missing property: ${prop}`);
+                if (result !== true) return result;
+            }
+            return true;
+        });
+
+        // Test 3: Chapter 2 has data
+        test("Chapter 2 has chapterContext", () => {
+            return assert(
+                BLEAK_HOUSE_DATA.chapterContext && BLEAK_HOUSE_DATA.chapterContext[2], 
+                "Chapter 2 chapterContext is missing"
+            );
+        });
+
+        // Test 4: Chapter 2 has title
+        test("Chapter 2 has title", () => {
+            return assert(
+                BLEAK_HOUSE_DATA.chapterTitles && BLEAK_HOUSE_DATA.chapterTitles[2], 
+                "Chapter 2 title is missing"
+            );
+        });
+
+        // Test 5: Chapter 2 has characters
+        test("Chapter 2 has charactersByChapter data", () => {
+            return assert(
+                BLEAK_HOUSE_DATA.charactersByChapter && BLEAK_HOUSE_DATA.charactersByChapter[2],
+                "Chapter 2 charactersByChapter is missing"
+            );
+        });
+
+        // Test 6: CRITICAL - Chapter 2 characters render (not zero)
+        test("Chapter 2 has renderable characters (> 0)", () => {
+            const chapter2 = BLEAK_HOUSE_DATA.charactersByChapter[2];
+            if (!chapter2) return "Chapter 2 data missing";
+            
+            let totalChars = 0;
+            for (const circle in chapter2) {
+                if (Array.isArray(chapter2[circle])) {
+                    totalChars += chapter2[circle].length;
+                }
+            }
+            
+            return assert(totalChars > 0, `Chapter 2 has ${totalChars} characters (should be > 0)`);
+        });
+
+        // Test 7: All 67 chapters have context
+        test("All 67 chapters have chapterContext", () => {
+            for (let i = 1; i <= 67; i++) {
+                const result = assert(
+                    BLEAK_HOUSE_DATA.chapterContext[i], 
+                    `Chapter ${i} missing chapterContext`
+                );
+                if (result !== true) return result;
+            }
+            return true;
+        });
+
+        // Test 8: All 67 chapters have titles
+        test("All 67 chapters have titles", () => {
+            for (let i = 1; i <= 67; i++) {
+                const result = assert(
+                    BLEAK_HOUSE_DATA.chapterTitles[i], 
+                    `Chapter ${i} missing title`
+                );
+                if (result !== true) return result;
+            }
+            return true;
+        });
+
+        // Test 9: Character stories exist
+        test("Character stories object exists and has data", () => {
+            const result = assert(
+                BLEAK_HOUSE_DATA.characterStories && Object.keys(BLEAK_HOUSE_DATA.characterStories).length > 0,
+                "characterStories is empty or missing"
+            );
+            if (result !== true) return result;
+            
+            // Check that at least one character has stories
+            const firstChar = Object.keys(BLEAK_HOUSE_DATA.characterStories)[0];
+            return assert(
+                Object.keys(BLEAK_HOUSE_DATA.characterStories[firstChar]).length > 0,
+                `Character ${firstChar} has no story entries`
+            );
+        });
+
+        // Test 10: Esther Summerson has story for chapter 3
+        test("Esther Summerson has story for chapter 3", () => {
+            return assert(
+                BLEAK_HOUSE_DATA.characterStories["Esther Summerson"] && 
+                BLEAK_HOUSE_DATA.characterStories["Esther Summerson"][3],
+                "Esther Summerson missing chapter 3 story"
+            );
+        });
+
+        // Test 11: getCharacterStory function exists
+        test("getCharacterStory function exists", () => {
+            return assert(typeof getCharacterStory === 'function', "getCharacterStory function not defined");
+        });
+
+        // Test 12: getCharacterStory returns data
+        test("getCharacterStory returns data for Esther chapter 4", () => {
+            const story = getCharacterStory("Esther Summerson", 4);
+            return assert(story !== null && story.length > 0, "getCharacterStory returned empty or null");
+        });
+
+        // Display results
+        const resultsDiv = document.getElementById('results');
+        const summaryDiv = document.getElementById('summary');
+        
+        const passed = results.filter(r => r.passed).length;
+        const failed = results.filter(r => !r.passed).length;
+        const total = results.length;
+
+        results.forEach(result => {
+            const div = document.createElement('div');
+            div.className = `test ${result.passed ? 'pass' : 'fail'}`;
+            
+            const status = result.passed ? '✓ PASS' : '✗ FAIL';
+            const statusClass = result.passed ? 'pass' : 'fail';
+            
+            div.innerHTML = `<span class="${statusClass}">${status}</span> - ${result.name}`;
+            
+            if (!result.passed && result.error) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-details';
+                errorDiv.textContent = result.error;
+                div.appendChild(errorDiv);
+            }
+            
+            resultsDiv.appendChild(div);
+        });
+
+        // Summary
+        const allPassed = failed === 0;
+        summaryDiv.innerHTML = `
+            <strong>Test Summary:</strong> ${passed}/${total} tests passed
+            ${allPassed ? 
+                '<div style="color: green; margin-top: 10px;">✓ All tests passed! Application should work correctly.</div>' :
+                '<div style="color: red; margin-top: 10px;">✗ Some tests failed. Application may not work correctly.</div>'
+            }
+        `;
+        summaryDiv.style.borderLeft = allPassed ? '4px solid green' : '4px solid red';
+
+        console.log(`Test Results: ${passed}/${total} passed`);
+        if (failed > 0) {
+            console.error("Failed tests:", results.filter(r => !r.passed));
+        }
+    </script>
+</body>
+</html>

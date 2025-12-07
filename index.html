@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleak House Companion - Spoiler-Free Character & Plot Guide</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d3561 0%, #1a1f3a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .chapter-control {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .chapter-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .chapter-selector label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .chapter-selector input,
+        .chapter-selector select {
+            min-width: 200px;
+            padding: 10px 15px;
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .chapter-selector select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        .chapter-selector button {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .chapter-selector button:hover {
+            background: #5568d3;
+        }
+
+        .current-chapter {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2d3561;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .chapter-context {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-style: italic;
+            color: #1565c0;
+            line-height: 1.6;
+        }
+        
+        .chapter-context:empty {
+            display: none;
+        }
+
+        .circle {
+            margin-bottom: 25px;
+        }
+
+        .circle-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #495057;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #e9ecef;
+            border-radius: 6px;
+        }
+
+        .character-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .character-item {
+            padding: 12px 15px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .character-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        /* Major characters - more prominent */
+        .character-item.major-character {
+            background: #f0f4ff;
+            border-left-width: 5px;
+            border-left-color: #4c5fd5;
+        }
+        
+        .character-item.major-character:hover {
+            background: #e3ebff;
+            box-shadow: 0 2px 8px rgba(76, 95, 213, 0.2);
+        }
+        
+        /* Minor characters - more subtle */
+        .character-item.minor-character {
+            border-left-width: 3px;
+            border-left-color: #a0aec0;
+            opacity: 0.9;
+        }
+        
+        .character-item.minor-character:hover {
+            opacity: 1;
+        }
+
+        .character-name {
+            font-weight: 700;
+            color: #2d3561;
+            margin-bottom: 3px;
+        }
+
+        .character-brief {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            color: #6c757d;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #343a40;
+        }
+
+        .modal h2 {
+            color: #2d3561;
+            margin-bottom: 15px;
+            padding-right: 30px;
+        }
+
+        .modal-body {
+            color: #495057;
+            line-height: 1.8;
+        }
+
+        .chapter-summary-section {
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .summary-toggle {
+            background: #ffc107;
+            color: #1a1f3a;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .summary-toggle:hover {
+            background: #ffb300;
+        }
+
+        .summary-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ffc107;
+            color: #495057;
+        }
+
+        .summary-content.visible {
+            display: block;
+        }
+        
+        .summary-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+        }
+        
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-content code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .no-characters {
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Bleak House Companion</h1>
+            <p class="subtitle">Spoiler-Free Character & Plot Guide by Charles Dickens</p>
+        </header>
+
+        <div class="chapter-control">
+            <div class="chapter-selector">
+                <label for="chapterInput">I'm reading Chapter:</label>
+                <select id="chapterInput" onchange="updateChapter()">
+                    <option value="1">1: In Chancery</option>
+                    <option value="2">2: In Fashion</option>
+                    <option value="3">3: A Progress</option>
+                    <option value="4">4: Telescopic Philanthropy</option>
+                    <option value="5">5: A Morning Adventure</option>
+                    <option value="6">6: Quite at Home</option>
+                    <option value="7">7: The Ghost's Walk</option>
+                    <option value="8">8: Covering a Multitude of Sins</option>
+                    <option value="9">9: Signs and Tokens</option>
+                    <option value="10">10: The Law-Writer</option>
+                    <option value="11">11: Our Dear Brother</option>
+                    <option value="12">12: On the Watch</option>
+                    <option value="13">13: Esther's Narrative</option>
+                    <option value="14">14: Deportment</option>
+                    <option value="15">15: Bell Yard</option>
+                    <option value="16">16: Tom-all-Alone's</option>
+                    <option value="17">17: Esther's Narrative</option>
+                    <option value="18">18: Lady Dedlock</option>
+                    <option value="19">19: Moving On</option>
+                    <option value="20">20: A New Lodger</option>
+                    <option value="21">21: The Smallweed Family</option>
+                    <option value="22">22: Mr. Bucket</option>
+                    <option value="23">23: Esther's Narrative</option>
+                    <option value="24">24: An Appeal Case</option>
+                    <option value="25">25: Mrs. Snagsby Sees It All</option>
+                    <option value="26">26: Sharpshooters</option>
+                    <option value="27">27: More Old Soldiers Than One</option>
+                    <option value="28">28: The Ironmaster</option>
+                    <option value="29">29: The Young Man</option>
+                    <option value="30">30: Esther's Narrative</option>
+                    <option value="31">31: Nurse and Patient</option>
+                    <option value="32">32: The Appointed Time</option>
+                    <option value="33">33: Interlopers</option>
+                    <option value="34">34: A Turn of the Screw</option>
+                    <option value="35">35: Esther's Narrative</option>
+                    <option value="36">36: Chesney Wold</option>
+                    <option value="37">37: Jarndyce and Jarndyce</option>
+                    <option value="38">38: A Struggle</option>
+                    <option value="39">39: Attorney and Client</option>
+                    <option value="40">40: National and Domestic</option>
+                    <option value="41">41: In Mr. Tulkinghorn's Room</option>
+                    <option value="42">42: In Mr. Tulkinghorn's Chambers</option>
+                    <option value="43">43: Esther's Narrative</option>
+                    <option value="44">44: The Letter and the Answer</option>
+                    <option value="45">45: In Trust</option>
+                    <option value="46">46: Stop Him!</option>
+                    <option value="47">47: Jo's Will</option>
+                    <option value="48">48: Closing In</option>
+                    <option value="49">49: Dutiful Friendship</option>
+                    <option value="50">50: Esther's Narrative</option>
+                    <option value="51">51: Enlightened</option>
+                    <option value="52">52: Obstinacy</option>
+                    <option value="53">53: The Track</option>
+                    <option value="54">54: Springing a Mine</option>
+                    <option value="55">55: Flight</option>
+                    <option value="56">56: Pursuit</option>
+                    <option value="57">57: Esther's Narrative</option>
+                    <option value="58">58: A Wintry Day and Night</option>
+                    <option value="59">59: Esther's Narrative</option>
+                    <option value="60">60: Perspective</option>
+                    <option value="61">61: A Discovery</option>
+                    <option value="62">62: Another Discovery</option>
+                    <option value="63">63: Steel and Iron</option>
+                    <option value="64">64: Esther's Narrative</option>
+                    <option value="65">65: Beginning the World</option>
+                    <option value="66">66: Down in Lincolnshire</option>
+                    <option value="67">67: The Close of Esther's Narrative</option>
+                </select>
+                <span class="current-chapter">Currently: Chapter <span id="currentChapter">1: In Chancery</span></span>
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">Capsule Summary</h2>
+                <div id="chapterContext" class="chapter-context"></div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Characters Appearing in This Chapter</h2>
+                <div id="characterCircles"></div>
+            </section>
+
+            <section class="section chapter-summary-section">
+                <button class="summary-toggle" onclick="toggleSummary()">
+                    📄 Show Full Chapter <span id="summaryChapter">1: In Chancery</span> Summary
+                </button>
+                <div class="summary-content" id="chapterSummary">
+                    <p id="summaryText">Loading...</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">All Characters in the Story So Far</h2>
+                <div id="allCharactersList"></div>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal" id="characterModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 id="modalCharacterName">Character Name</h2>
+            <div class="modal-body" id="modalCharacterStory">
+                Loading...
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        // Main application logic
+        let currentChapter = 1;
+
+        function updateChapter() {
+            const select = document.getElementById('chapterInput');
+            currentChapter = parseInt(select.value);
+            const title = BLEAK_HOUSE_DATA.chapterTitles[currentChapter] || currentChapter;
+            
+            document.getElementById('currentChapter').textContent = currentChapter + ': ' + title;
+            document.getElementById('summaryChapter').textContent = currentChapter + ': ' + title;
+            
+            renderCharacters();
+            renderSummary();
+            renderAllCharacters();
+        }
+
+        function renderCharacters() {
+            const container = document.getElementById('characterCircles');
+            const contextDiv = document.getElementById('chapterContext');
+            
+            // Show chapter context
+            contextDiv.textContent = BLEAK_HOUSE_DATA.chapterContext[currentChapter] || '';
+            
+            // Get characters for this chapter
+            const characters = BLEAK_HOUSE_DATA.charactersByChapter[currentChapter];
+            
+            if (!characters || Object.keys(characters).length === 0) {
+                container.innerHTML = '<div class="no-characters">No character data available for this chapter yet.</div>';
+                return;
+            }
+            
+            // Render by circles in order
+            let html = '';
+            const circles = BLEAK_HOUSE_DATA.circleOrder || Object.keys(characters);
+            
+            circles.forEach(circleName => {
+                if (characters[circleName] && characters[circleName].length > 0) {
+                    html += `<div class="circle">`;
+                    html += `<div class="circle-name">${circleName}</div>`;
+                    html += `<ul class="character-list">`;
+                    
+                    characters[circleName].forEach(char => {
+                        const isMajor = BLEAK_HOUSE_DATA.majorCharacters.includes(char.name);
+                        const className = isMajor ? 'major-character' : 'minor-character';
+                        html += `
+                            <li class="character-item ${className}" onclick="showCharacterStory('${char.name.replace(/'/g, "\\'")}')">
+                                <div class="character-name">${char.name}</div>
+                                <div class="character-brief">${char.summary || ''}</div>
+                            </li>
+                        `;
+                    });
+                    
+                    html += `</ul></div>`;
+                }
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function renderSummary() {
+            const summaryText = BLEAK_HOUSE_DATA.chapterSummaries[currentChapter];
+            if (summaryText) {
+                // Split on ||| marker and wrap each paragraph in <p> tags
+                const paragraphs = summaryText.split('|||').map(p => `<p>${p.trim()}</p>`).join('');
+                document.getElementById('summaryText').innerHTML = paragraphs;
+            } else {
+                document.getElementById('summaryText').textContent = 'No summary available yet.';
+            }
+        }
+
+        function showCharacterStory(characterName) {
+            const modal = document.getElementById('characterModal');
+            const nameEl = document.getElementById('modalCharacterName');
+            const storyEl = document.getElementById('modalCharacterStory');
+            
+            nameEl.textContent = characterName;
+            
+            // Get character story up to (but not including) current chapter
+            const stories = BLEAK_HOUSE_DATA.characterStories[characterName] || {};
+            let storyHtml = '';
+            
+            for (let ch = 1; ch < currentChapter; ch++) {
+                if (stories[ch]) {
+                    const title = BLEAK_HOUSE_DATA.chapterTitles[ch] || ch;
+                    storyHtml += `<p><strong>Chapter ${ch}: ${title}</strong><br>${stories[ch]}</p>`;
+                }
+            }
+            
+            if (!storyHtml) {
+                storyHtml = '<p>This is the first appearance of this character, or no story information is available yet.</p>';
+            }
+            
+            storyEl.innerHTML = storyHtml;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('characterModal').classList.remove('active');
+        }
+
+        function toggleSummary() {
+            const content = document.getElementById('chapterSummary');
+            content.classList.toggle('visible');
+        }
+
+        function renderAllCharacters() {
+            const container = document.getElementById('allCharactersList');
+            
+            // Collect all unique characters from chapters 1 through current
+            const allCharacters = {};
+            
+            for (let ch = 1; ch <= currentChapter; ch++) {
+                const chapterChars = BLEAK_HOUSE_DATA.charactersByChapter[ch];
+                if (!chapterChars) continue;
+                
+                // Go through each circle
+                for (const circleName in chapterChars) {
+                    if (!allCharacters[circleName]) {
+                        allCharacters[circleName] = new Map();
+                    }
+                    
+                    // Add each character (Map prevents duplicates by name)
+                    chapterChars[circleName].forEach(char => {
+                        if (!allCharacters[circleName].has(char.name)) {
+                            allCharacters[circleName].set(char.name, char);
+                        }
+                    });
+                }
+            }
+            
+            // Render by circles in order
+            let html = '';
+            const circles = BLEAK_HOUSE_DATA.circleOrder || Object.keys(allCharacters);
+            
+            circles.forEach(circleName => {
+                if (allCharacters[circleName] && allCharacters[circleName].size > 0) {
+                    html += `<div class="circle">`;
+                    html += `<div class="circle-name">${circleName}</div>`;
+                    html += `<ul class="character-list">`;
+                    
+                    // Convert Map to array and sort by name
+                    const charArray = Array.from(allCharacters[circleName].values())
+                        .sort((a, b) => a.name.localeCompare(b.name));
+                    
+                    charArray.forEach(char => {
+                        const isMajor = BLEAK_HOUSE_DATA.majorCharacters.includes(char.name);
+                        const className = isMajor ? 'major-character' : 'minor-character';
+                        html += `
+                            <li class="character-item ${className}" onclick="showCharacterStory('${char.name.replace(/'/g, "\\'")}')">
+                                <div class="character-name">${char.name}</div>
+                                <div class="character-brief">${char.summary || ''}</div>
+                            </li>
+                        `;
+                    });
+                    
+                    html += `</ul></div>`;
+                }
+            });
+            
+            if (!html) {
+                html = '<div class="no-characters">No character data available yet.</div>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        // Close modal on background click
+        document.getElementById('characterModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            updateChapter();
+        });
+    </script>
+</body>
+</html>

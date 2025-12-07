@@ -1,0 +1,351 @@
+{
+  "Ada Clare": {
+    "4": "Introduced as a beautiful, gentle young woman. She's Richard Carstone's cousin and a ward in Chancery, party to the Jarndyce and Jarndyce suit. Esther immediately likes her.",
+    "5": "Travels to Bleak House with Esther and Richard. She's a ward of Mr. Jarndyce.",
+    "6": "Growing close to Esther and Richard. Life at Bleak House is happy and comfortable for her.",
+    "9": "Accompanies Esther visiting the poor with Mrs. Pardiggle. After Mrs. Pardiggle's harsh 'charity', Ada stays with Esther to offer genuine comfort to a grieving mother.",
+    "13": "Growing closer to Richard romantically. Esther notices their attachment growing.",
+    "17": "Secretly in love with Richard. Mr. Jarndyce is worried about their developing relationship given Richard's instability.",
+    "23": "Still at Bleak House, Esther's closest friend. Concerned about Richard's choices.",
+    "30": "Kept away from Esther to protect her from smallpox contagion.",
+    "35": "Reunited with Esther after her recovery. Happy to have her friend back despite the scarring.",
+    "38": "Has secretly married Richard despite his deteriorating condition and Jarndyce's disapproval. Committed to Richard out of love, knowing he needs her.",
+    "43": "With Richard. Has revealed to Esther that she's pregnant. Standing by Richard despite his deterioration.",
+    "59": "Pregnant, caring for very ill Richard as lawsuit nears end.",
+    "60": "With Richard at the final court hearing. Supporting him through the devastating conclusion.",
+    "61": "Supporting devastated Richard after lawsuit's hollow ending.",
+    "64": "With dying Richard. Standing by him to the end.",
+    "65": "At Richard's deathbed. Becomes widow with baby. Richard dies asking her forgiveness.",
+    "67": "Seven years later: Widow with son (Richard's child). Lives at new Bleak House with Esther. Her son shows promise of being better than his father."
+  },
+  "Allan Woodcourt": {
+    "47": "Doctor treating dying Jo. Shows compassion. He's been established as a good man who loves Esther, though she's engaged to Jarndyce.",
+    "59": "Has returned. Loves Esther. Jarndyce arranges for Woodcourt and Esther to marry, recognizing their love.",
+    "64": "Esther's true love, preparing for marriage to her.",
+    "65": "Doctor at Richard's bedside during his death.",
+    "67": "Married to Esther, has two daughters. Beloved doctor serving the poor. Happy life."
+  },
+  "Caddy Jellyby": {
+    "4": "Mrs. Jellyby's eldest daughter. She's exhausted and resentful, forced to work as her mother's secretary for the African philanthropy project while her own family is neglected.",
+    "14": "Engaged to Prince Turveydrop, a gentle dancing teacher. She's learning to dance and trying to escape her chaotic home life. Esther supports her engagement.",
+    "67": "Seven years later: Married to Prince, has children. Found happiness despite difficult upbringing."
+  },
+  "Charley Neckett": {
+    "15": "13-year-old eldest child of deceased bailiff Neckett. Caring for two younger siblings in poverty with remarkable courage and love. Discovered by Esther and Jarndyce.",
+    "17": "Has become Esther's devoted young maid. Grateful for the position and devoted to Esther.",
+    "30": "Devotedly nurses Esther through smallpox. Gets sick herself but recovers. Shows her love and loyalty to Esther.",
+    "31": "Devotedly nurses Esther through her recovery from smallpox. Shows deep loyalty and love.",
+    "67": "Seven years later: Married and happy. No longer a poor orphan but has made a good life."
+  },
+  "Esther Summerson": {
+    "3": "Narrates her sad childhood: raised by strict godmother Miss Barbary who told her on birthdays it would have been better if she'd never been born. After Miss Barbary died, was educated for 6 years, then sent to become companion at Bleak House. Mystery surrounds her birth.",
+    "4": "Arrives in London, meets Ada and Richard - instantly likes them. At the chaotic Jellyby house, she's appalled by the neglect but remains polite and tries to help little Peepy.",
+    "5": "Travels to Bleak House with Ada and Richard. Mr. Jarndyce appoints her housekeeper, giving her keys and responsibility. She feels proud to have a real role and home for the first time.",
+    "6": "Content as Bleak House housekeeper. Grows close to Ada and Richard. Discovers Mr. Jarndyce was her mysterious benefactor all along.",
+    "9": "Visits the poor with Mrs. Pardiggle. After Mrs. Pardiggle's harsh lectures, Esther and Ada stay to offer true compassion to a grieving mother who lost her baby.",
+    "13": "Encounters Jo in London, deeply moved by his poverty and illiteracy. Disturbed by Skimpole's callous attitude toward the poor.",
+    "14": "Supports Caddy's engagement to Prince. Meets the absurd Mr. Turveydrop.",
+    "15": "Discovers the orphaned Neckett children in poverty. Wants to help them, especially Charley.",
+    "17": "Charley has become her maid. She's worried about the growing romance between Ada and Richard.",
+    "18": "Focus shifts away from Esther to Lady Dedlock, but Guppy's investigation connects to Esther's past.",
+    "23": "Receives awkward marriage proposal from Mr. Guppy in formal legal language. Gently but firmly rejects him.",
+    "30": "Compassionately cares for sick Jo despite the risk. Contracts smallpox from him and becomes seriously ill. May be disfigured by the disease.",
+    "31": "Recovering from smallpox. Has been disfigured - her beauty is gone. Must come to terms with her changed appearance.",
+    "35": "Sees her scarred face in mirror for the first time - powerful emotional moment. Mr. Jarndyce proposes marriage (protective, not romantic). Accepts out of gratitude though not in love. Begins adapting to new life.",
+    "38": "Discovers Ada has secretly married Richard. Supports Ada's choice despite understanding the difficulties ahead.",
+    "43": "Preparing for marriage to Jarndyce without romantic passion. Learns Ada is pregnant. Trying to maintain connections despite difficult circumstances.",
+    "44": "Receives letter from Lady Dedlock revealing she is her mother. Stunned to learn her mother's identity.",
+    "47": "Present as Jo dies. Moved by his death and society's failure toward him.",
+    "48": "Joins desperate search for her mother Lady Dedlock, who has fled.",
+    "49": "Desperately searching for Lady Dedlock with Bucket. Frantic to find her mother before tragedy.",
+    "50": "Continues frantic search with Bucket, following her mother's trail.",
+    "53": "Searching desperately for Lady Dedlock with Bucket.",
+    "56": "With Bucket in frantic pursuit, racing against time.",
+    "57": "Finds Lady Dedlock dead at cemetery gates. Devastating moment - finds her mother's body.",
+    "59": "Jarndyce reveals he never meant to marry her - recognized she loves Woodcourt. Arranges for her to marry Woodcourt. Overwhelmed with gratitude. Will marry the man she truly loves.",
+    "60": "Present for the hollow ending of the lawsuit that consumed so many lives.",
+    "61": "Witnessing Richard's complete collapse after lawsuit ends.",
+    "64": "Preparing for marriage to Woodcourt. Jarndyce has arranged everything for her happiness including new Bleak House.",
+    "65": "Present for Richard's death. Witnesses his reconciliation with Jarndyce.",
+    "67": "EPILOGUE - Seven years later: Happily married to Woodcourt, two daughters. Lives in new Bleak House. Woodcourt serves poor as doctor. Ada and her son live with them. Reflects on happiness after suffering. Concludes her narrative on hopeful note."
+  },
+  "Harold Skimpole": {
+    "5": "Charming middle-aged man who claims to be child-like, knowing nothing about money. Richard generously pays his debt. Joins them to Bleak House. Hints suggest he may be manipulative.",
+    "6": "Continues staying at Bleak House, constantly 'borrowing' money with no intention of repaying, using charming excuses about being a 'child'. His parasitic behavior becomes clearer.",
+    "13": "Callously suggests Jo should be gotten rid of, revealing his complete lack of empathy despite his charming manner. His selfishness becomes clearer."
+  },
+  "Jo": {
+    "10": "A young homeless crossing-sweeper. Testifies at Nemo's inquest that Nemo was kind to him. He's the only person who mourns Nemo's death. Illiterate and poor but good-hearted. A disguised Lady Dedlock questions him about Nemo and he shows her the burial place.",
+    "11": "Sole mourner at Nemo's pauper burial. The only person who cared about Nemo.",
+    "12": "Questioned by Bucket and Tulkinghorn about the veiled lady who visited Nemo's grave. Describes her but doesn't know who she was.",
+    "13": "Encountered by Esther's group in London. His poverty and illiteracy move Esther.",
+    "16": "Living in the horrific Tom-all-Alone's slum. Questioned again by investigators.",
+    "19": "Constantly told to 'move on' by police. Homeless and unwanted everywhere. Mr. Snagsby secretly helps him with money.",
+    "22": "Still sick and being moved on. Snagsby continues helping him secretly.",
+    "25": "Seen by Mrs. Snagsby who misinterprets his presence.",
+    "30": "Sick with smallpox, brought to Bleak House. Esther cares for him and contracts his disease.",
+    "47": "Dying at George's shooting gallery. Unable to say Lord's Prayer properly, never learned it. Dies with words about 'moving on'. His death symbolizes society's failure toward the vulnerable. Heartbreaking."
+  },
+  "John Jarndyce": {
+    "5": "Guardian of Esther, Ada, and Richard. Kind, generous man in his 60s who creates a family atmosphere at Bleak House. Has peculiarity of talking about 'the wind being in the East' when the lawsuit is mentioned. Clearly wants to protect the young people from the lawsuit's curse.",
+    "6": "Revealed to be constantly doing secret acts of charity anonymously. Esther discovers he's been her mysterious benefactor. He's worried about Richard's lack of commitment to medicine.",
+    "13": "Worried about Richard's inability to stick with anything - he's quit medicine for law. The 'East wind' is blowing.",
+    "15": "Arranges care for the orphaned Neckett children, showing his practical charity.",
+    "17": "Increasingly concerned about Richard's obsession with the Jarndyce case and his relationship with Ada.",
+    "23": "Still guardian, worried about Richard's choices.",
+    "24": "Horrified by Richard's choice of lawyer Vholes, but powerless to stop him.",
+    "30": "Deeply worried about sick Esther.",
+    "31": "Caring, supportive guardian to recovering Esther.",
+    "35": "Proposes marriage to Esther out of care and protection (not romantic passion). She accepts.",
+    "37": "Estranged from Richard over the lawsuit. Pained by Richard's self-destruction but powerless to stop it.",
+    "43": "Planning marriage with Esther.",
+    "45": "Managing various affairs and business.",
+    "59": "Reveals incredible selflessness: never intended to actually marry Esther. Recognized she loves Woodcourt and arranged everything so they can be together. Even provides them new Bleak House.",
+    "60": "Supporting everyone through the devastating end of the lawsuit.",
+    "61": "Trying to help collapsed Richard but damage is done.",
+    "64": "Has arranged everything for Esther's happiness - marriage to Woodcourt, new Bleak House. Incredible selflessness.",
+    "65": "Reconciles with Richard before death. Richard finally understands Jarndyce was always trying to help.",
+    "67": "Seven years later: Living at original Bleak House, happy. His selflessness has brought happiness to everyone."
+  },
+  "Lady Dedlock": {
+    "2": "Beautiful wife of Sir Leicester. Profoundly bored with her aristocratic life. When shown legal papers by Tulkinghorn, she sees a particular handwriting and reacts strongly - asks who wrote it and nearly faints. Clearly the handwriting connects to something important in her past.",
+    "10": "Disguises herself as a servant and secretly visits the pauper's graveyard where Nemo is buried. Questions Jo about Nemo. This reveals Nemo was someone deeply important to her past, possibly the father of a secret child.",
+    "12": "Her disguised visit to Nemo's grave is being investigated by Tulkinghorn.",
+    "18": "Restless and anxious at Chesney Wold, haunted by her past. Mr. Guppy comes with information about her secret.",
+    "27": "At Chesney Wold, anxious.",
+    "28": "Present during Rouncewell visit.",
+    "29": "Devastated to learn from Guppy that Esther is her daughter - she thought her child had died. Her secret is now known by multiple people.",
+    "32": "Confronted by Tulkinghorn who reveals he knows her secret: had a child (Esther) out of wedlock with Captain Hawdon before marriage. Tulkinghorn doesn't expose her but makes clear he has power over her. Now trapped and controlled.",
+    "33": "Living at Chesney Wold in fear of exposure, under Tulkinghorn's control. Inner turmoil contrasts with surface calm.",
+    "36": "Continues living under Tulkinghorn's unstated threat, never knowing when he might expose her.",
+    "40": "Becomes a suspect in Tulkinghorn's murder - she had the strongest motive as he held power over her with her secret.",
+    "44": "Writes confession letters to Sir Leicester and Esther. Reveals her past - had a child out of wedlock before marriage. Reveals to Esther she is her mother. Plans to flee, unable to bear shame.",
+    "48": "Has fled in shame and despair after leaving confession, believing she'll be rejected. Running without clear destination.",
+    "49": "Being pursued. Fleeing driven by shame, they fear she may harm herself.",
+    "50": "Still fleeing. Her trail being followed desperately.",
+    "55": "Fleeing through London in disguise (switched clothes with Jenny). Driven by shame and despair. Moving through poorest areas.",
+    "56": "Still fleeing, staying ahead of pursuit. Desperate emotional state.",
+    "57": "DIES at gates of cemetery where Nemo is buried. Died of exposure, exhaustion, heartbreak. Came to be near Nemo at end. Tragic - fled unnecessarily as Sir Leicester wanted to forgive her."
+  },
+  "Lord High Chancellor": {
+    "1": "Presides over the chaotic Court of Chancery where the endless Jarndyce and Jarndyce case drags on, destroying lives while enriching lawyers."
+  },
+  "Mademoiselle Hortense": {
+    "46": "Revealed as Tulkinghorn's real murderer. Lady Dedlock's former French maid. Killed Tulkinghorn out of revenge - felt wronged. Arrested by Bucket. Fierce and unrepentant."
+  },
+  "Miss Barbary": {
+    "3": "Esther's strict godmother who raised her without love. Repeatedly told Esther it would have been better if she'd never been born and to pray for the sins that brought her into the world. Died suddenly when Esther was 14. The mystery of her harshness is part of the novel's central mystery."
+  },
+  "Miss Flite": {
+    "4": "Eccentric elderly woman, a ward in Chancery who has been waiting for years for a judgment. She represents the destructive effect the court has on people's lives.",
+    "15": "Lives in the same building as the Neckett children. Still waiting for judgment day in Chancery.",
+    "24": "Still attending Chancery Court eternally, waiting for judgment day that never comes.",
+    "37": "Still eternally attending Chancery Court, waiting for judgment day that never comes.",
+    "60": "At court for final hearing. Witnesses end of the case she's followed eternally."
+  },
+  "Mr. Bucket": {
+    "12": "Detective enlisted by Tulkinghorn to investigate Lady Dedlock's secret. Questions Jo.",
+    "16": "Visits Tom-all-Alone's with Snagsby to question Jo further.",
+    "19": "Enforces orders for Jo to 'move on' - move along from wherever he tries to stay.",
+    "22": "Continues detective work on Tulkinghorn's investigation.",
+    "25": "Observing the Snagsby domestic drama.",
+    "34": "Investigating various matters.",
+    "39": "Leads the investigation into Tulkinghorn's murder. Arrests Mr. George.",
+    "40": "Arrives at Chesney Wold to investigate Lady Dedlock's possible involvement in the murder.",
+    "41": "Investigating murder scene methodically at Tulkinghorn's chambers. Demonstrates detective skills.",
+    "42": "Continuing thorough investigation, piecing together evidence.",
+    "45": "Gathering evidence systematically.",
+    "46": "Reveals the real murderer is Mademoiselle Hortense. Arrests her dramatically. Solves the murder.",
+    "48": "Hired by Sir Leicester to find Lady Dedlock before tragedy. Begins pursuit.",
+    "49": "Leading desperate pursuit of Lady Dedlock with Esther and Mrs. Bucket. Following clues.",
+    "50": "Continues leading intense search, tracking Lady Dedlock's movements.",
+    "52": "Still searching for Lady Dedlock.",
+    "53": "Following her trail through London methodically.",
+    "55": "Pursuing Lady Dedlock.",
+    "56": "Leading desperate chase, using all detective skills. Race against time.",
+    "57": "With Esther when they find Lady Dedlock's body.",
+    "62": "Provides additional information about events. Ties up loose ends."
+  },
+  "Mr. George": {
+    "20": "Ex-soldier who runs a shooting gallery. Upright character being pressured by Smallweed over debt. Tulkinghorn seeks letters from him. He's Mrs. Rouncewell's son, though estranged.",
+    "26": "Being pressured by Smallweed for debt payment and by Tulkinghorn for letters. Refuses to give up letters out of loyalty to dead friend Hawdon.",
+    "27": "Visits Chesney Wold and has emotional reunion with his mother Mrs. Rouncewell after years of estrangement.",
+    "39": "Arrested for Tulkinghorn's murder. Had motive (conflict over letters) and opportunity. Maintains his innocence but evidence points to him. His shooting gallery taken by Smallweed.",
+    "41": "Under suspicion, in custody for Tulkinghorn's murder.",
+    "46": "Released when Hortense is revealed as the real murderer.",
+    "47": "Caring for dying Jo at his shooting gallery. Shows compassion.",
+    "51": "Reveals himself to his mother Mrs. Rouncewell after years away. She's overjoyed.",
+    "54": "Protects Sir Leicester from Smallweed's blackmail attempt. Shows loyalty to Dedlock family.",
+    "58": "Stays at Chesney Wold to attend Sir Leicester. Quiet act of loyalty.",
+    "63": "At Chesney Wold attending Sir Leicester, showing loyalty. Brother and mother proud of his character.",
+    "66": "Faithfully attending declining Sir Leicester. Shows honor and loyalty."
+  },
+  "Mr. Guppy": {
+    "18": "Young lawyer who has discovered information about Esther's past and Lady Dedlock's secret. Visits Lady Dedlock at Chesney Wold.",
+    "23": "Awkwardly proposes marriage to Esther in formal legal language. She gently rejects him.",
+    "29": "Tells Lady Dedlock what he's discovered: that Esther is her daughter. Lady Dedlock is devastated.",
+    "33": "Returns to Chesney Wold, having learned Esther survived smallpox."
+  },
+  "Mr. Kenge": {
+    "3": "Kindly lawyer who arranged for Esther's education after Miss Barbary died. Explains Esther will become companion at Bleak House.",
+    "4": "Introduces Esther to Ada and Richard at his law office."
+  },
+  "Mr. Krook": {
+    "8": "A rag and bottle dealer who calls himself the 'Lord Chancellor'. His shop is full of chaotic junk - a parody of the Chancery court. Can't read or write but obsessively collects legal documents. Nemo rents a room above his shop.",
+    "10": "Nemo is found dead in a room above Krook's shop.",
+    "15": "Landlord of the building where the Neckett children, and Miss Flite live."
+  },
+  "Mr. Rouncewell": {
+    "27": "George's brother, a successful ironmaster (industrial businessman). Visits Chesney Wold, representing the rising industrial middle class.",
+    "28": "Visits with his son Watt. Asks if Watt can court Rosa, Lady Dedlock's maid, but wants her educated as a lady first. Represents changing social order.",
+    "63": "George's brother, proud of George's character. Represents successful industrial middle class."
+  },
+  "Mr. Snagsby": {
+    "8": "A law stationer (supplier of legal documents). Kind, simple man constantly puzzled by events. Explains to Tulkinghorn that the copying was done by law-writer Nemo.",
+    "10": "Present at the inquest into Nemo's death.",
+    "11": "Attends Nemo's burial, troubled by the experience and society's cruelty to the poor.",
+    "12": "Drawn deeper into Tulkinghorn's investigation against his will. His wife's jealousy grows.",
+    "16": "Visits Tom-all-Alone's with Bucket. Continues to be troubled.",
+    "19": "Secretly helps Jo with money out of compassion, despite the risk. His wife is increasingly suspicious.",
+    "22": "Still secretly helping Jo out of compassion.",
+    "25": "Innocent victim of his wife's groundless jealousy and suspicions. Bewildered by her accusations.",
+    "34": "Remains caught up in matters beyond his understanding and control.",
+    "41": "Brought to Tulkinghorn's crime scene and questioned by Bucket."
+  },
+  "Mr. Tulkinghorn": {
+    "2": "The Dedlocks' elderly family lawyer. Mysterious and discreet, knowing secrets of many aristocratic families. Shows Lady Dedlock legal papers; when she sees a particular handwriting and reacts strongly, he becomes immediately suspicious.",
+    "8": "Investigates the handwriting. Visits law stationer Snagsby, learns it was written by law-writer Nemo. Goes to Nemo's squalid room above Krook's shop, sees evidence of poverty and opium use.",
+    "10": "Attends Nemo's inquest, watching everything carefully.",
+    "11": "Observing Nemo's burial as part of his investigation.",
+    "12": "Enlists detective Bucket to investigate the veiled lady. Directing the investigation into Lady Dedlock's secret.",
+    "16": "Directing investigation in Tom-all-Alone's.",
+    "20": "Visits Mr. George seeking letters connected to his investigation.",
+    "21": "Visits Smallweeds wanting letters about Captain Hawdon (Nemo's real name).",
+    "22": "Directing ongoing investigation.",
+    "26": "Wants letters George has from Hawdon.",
+    "29": "Learns that Guppy knows Lady Dedlock's secret. Now multiple people know.",
+    "32": "Confronts Lady Dedlock, revealing he knows her secret but doesn't immediately expose her. Holds power over her, controlling when/how to use the information.",
+    "33": "Maintains his control over Lady Dedlock.",
+    "36": "At Chesney Wold, maintaining his unstated threat over Lady Dedlock.",
+    "39": "MURDERED - found shot through the heart in his chambers. This is the novel's central crime."
+  },
+  "Mr. Turveydrop": {
+    "14": "Prince's father. Absurd, vain old man obsessed with 'Deportment'. Lives parasitically off his son's work as dancing teacher. Selfish and demanding."
+  },
+  "Mr. Vholes": {
+    "24": "Richard's new lawyer. Described as vampiric and predatory - will drain Richard's resources. Represents the worst of the legal profession.",
+    "37": "Systematically draining Richard's money and health with the lawsuit. Vampiric and predatory lawyer destroying his client.",
+    "60": "Still draining Richard at the final court hearing. Parasitic to the end.",
+    "61": "Immediately abandons Richard now there's no more money. Parasitic to the very end - takes everything then leaves."
+  },
+  "Mrs. Jellyby": {
+    "4": "Obsessed with settling English families in Africa (Borrioboola-Gha). Spends all time writing letters for this distant cause while completely neglecting her own home and children. Example of 'telescopic philanthropy' - focusing on distant causes while ignoring immediate responsibilities."
+  },
+  "Mrs. Pardiggle": {
+    "9": "Aggressive charity worker who forces her five sons to donate pocket money against their will. Takes Esther and Ada visiting the poor, but her 'charity' is harsh lectures with no real compassion. Represents false, showy charity."
+  },
+  "Mrs. Rouncewell": {
+    "7": "Housekeeper at Chesney Wold, served the Dedlock family for 50 years. Tells visitors the legend of the Ghost's Walk - a story about ghostly footsteps heard before family misfortune.",
+    "20": "Revealed to be Mr. George's mother, though they've been estranged for years.",
+    "27": "Has emotional reunion with her son George after years of estrangement.",
+    "36": "Housekeeper at Chesney Wold.",
+    "40": "Distressed by Tulkinghorn's murder and the investigation at Chesney Wold.",
+    "51": "Caring for collapsed Sir Leicester. Reunited with her son George - overjoyed despite circumstances.",
+    "58": "Caring for household at Chesney Wold during mourning.",
+    "63": "Mother of George and Rouncewell, proud of her sons.",
+    "66": "Continues as housekeeper at declining Chesney Wold, caring for Sir Leicester."
+  },
+  "Mrs. Snagsby": {
+    "8": "Mr. Snagsby's wife, described as suspicious and jealous by nature.",
+    "11": "Jealous and suspicious of her innocent husband.",
+    "12": "Her jealousy and suspicion growing as husband drawn into investigation.",
+    "19": "Increasingly suspicious of her husband's compassionate actions toward Jo.",
+    "25": "Her jealousy reaches peak. Sees Jo and jumps to completely wrong conclusions about her husband. Convinced he's been unfaithful though he's innocent.",
+    "34": "Her jealousy and suspicion of her husband persist."
+  },
+  "Nemo": {
+    "8": "Law-writer (Latin for 'no one') who lives in squalid poverty above Krook's shop. His handwriting was what Lady Dedlock recognized. Evidence of opium use in his room.",
+    "10": "Found dead from apparent opium overdose. At inquest, no one knows his real name or past - truly 'no one'. Buried in pauper's grave with no mourners except Jo. Revealed to be someone deeply important to Lady Dedlock's past.",
+    "11": "Buried in pauper's cemetery with only Jo mourning him. The burial exposes society's cruelty to the poor."
+  },
+  "Prince Turveydrop": {
+    "14": "Gentle dancing teacher, Caddy's fiancé. Supports his lazy, vain father while working hard himself."
+  },
+  "Richard Carstone": {
+    "4": "Handsome, cheerful young man. Ada's cousin. Ward in Chancery, party to the Jarndyce suit. Esther immediately likes him.",
+    "5": "Generously pays Skimpole's debt to free him. Must choose a profession as ward of Mr. Jarndyce.",
+    "6": "Decides to study medicine with surgeon Mr. Badger, but seems to treat it lightly and lacks serious commitment, worrying Mr. Jarndyce.",
+    "9": "Already becoming dissatisfied with medicine, showing inability to commit. The 'East wind' is blowing.",
+    "13": "Has quit medicine, now wants to study law. Shows continued inability to commit to anything. This worries Jarndyce. Growing romantically attached to Ada.",
+    "17": "Has now given up law and wants to be a soldier. Increasingly obsessed with the Jarndyce case. His relationship with Ada deepens despite Jarndyce's concerns.",
+    "23": "Has now joined the army, another career change. His obsession with the Jarndyce case continues to grow.",
+    "24": "Dangerously obsessed with the lawsuit, convinced he'll win fortune. Hires predatory lawyer Vholes despite Jarndyce's horror. Becoming consumed by the case.",
+    "35": "His obsession with the lawsuit has created a rift with Jarndyce. Deteriorating.",
+    "37": "Completely consumed by obsession with Jarndyce case. Vholes is draining his money and health. Has broken with Jarndyce completely. His self-destruction is painful to watch.",
+    "38": "Has secretly married Ada. His deterioration continues but Ada is committed to him.",
+    "43": "Health continuing to deteriorate due to lawsuit obsession. Ada is standing by him despite everything.",
+    "59": "Very ill, lawsuit nearing end. Has wasted health and resources on the case.",
+    "60": "At final court hearing. Devastated when case concludes with entire estate consumed by legal costs - nothing left. The lawsuit destroyed him for nothing.",
+    "61": "Completely devastated by lawsuit's ending - all hopes destroyed. Realization he wasted everything breaks him mentally and physically. Complete collapse.",
+    "64": "Dying - lawsuit and obsession destroyed his health completely.",
+    "65": "On deathbed. Reconciles with Jarndyce in final moments - finally understands Jarndyce tried to help. Asks forgiveness. Says goodbye to Ada and dies. Tragic end - ultimate human cost of Chancery."
+  },
+  "Sir Leicester Dedlock": {
+    "2": "Elderly baronet obsessed with his family lineage and social position. Owns the grand estate Chesney Wold in Lincolnshire. Completely devoted to aristocratic traditions.",
+    "18": "Devoted husband at Chesney Wold, completely oblivious to his wife's anxiety and secrets.",
+    "27": "At Chesney Wold.",
+    "28": "Offended by Rouncewell's presumption that his son could court Rosa, a servant. His aristocratic values are challenged by the rising middle class.",
+    "33": "At Chesney Wold, oblivious to his wife's torment and situation.",
+    "36": "Hosting guests in aristocratic fashion, oblivious to the tension.",
+    "40": "Deeply affected by Tulkinghorn's murder - Tulkinghorn was his trusted advisor. Shocked by events.",
+    "44": "Will receive Lady Dedlock's confession letter.",
+    "48": "Receives confession, learns truth about her past. Though shocked, his love remains - wants to forgive her. But she's already fled believing she'll be rejected.",
+    "51": "Receives full truth, collapses with stroke. Partially paralyzed but love for Lady Dedlock unchanged - desperately wants her found and forgiven.",
+    "52": "Partially paralyzed, tries to communicate he forgives her and wants her found. His genuine love and forgiveness contrast tragically with her belief she'd be rejected.",
+    "54": "Protected by George from Smallweed's blackmail attempt.",
+    "58": "Mourning in winter at Chesney Wold. Partially paralyzed, grieving for wife. Despite everything, his love never wavered.",
+    "63": "Declining health.",
+    "66": "Lives alone in declining Chesney Wold, partially paralyzed, mourning wife. The aristocratic world he represented is fading. Melancholy but dignified."
+  },
+  "Grandfather Smallweed": {
+    "20": "Money lender pressing Mr. George over debt. Has letters Tulkinghorn wants.",
+    "21": "Grotesque miserly money lender. Has letters related to Captain Hawdon that Tulkinghorn wants.",
+    "26": "Pressing Mr. George for debt payment and trying to get the letters.",
+    "34": "Continuing his schemes and machinations.",
+    "39": "Takes possession of George's shooting gallery after George's arrest.",
+    "42": "Searching through Tulkinghorn's papers for evidence and documents.",
+    "45": "Involved in various schemes and investigations.",
+    "54": "Tries to blackmail Sir Leicester with documents about Lady Dedlock's past. Demands money. His greed and cruelty fully displayed.",
+    "62": "Still scheming but largely defeated. His greed has gotten him nowhere."
+  },
+  "Tom Jarndyce": {
+    "1": "Deceased litigant in the Jarndyce case who shot himself in despair at a coffee-house in Chancery Lane. His suicide illustrates how the endless lawsuit drives people mad and destroys lives."
+  },
+  "Jenny": {
+    "50": "The brickmaker's wife. Provides crucial information about Lady Dedlock - they once switched clothes."
+  },
+  "Phil Squod": {
+    "26": "George's loyal assistant at the shooting gallery. Devoted to George.",
+    "47": "Helping George care for dying Jo. Shows kindness.",
+    "66": "With George at Chesney Wold, loyal as always."
+  },
+  "Mrs. Bucket": {
+    "49": "Bucket's wife, helping with the search for Lady Dedlock.",
+    "50": "Continues helping with pursuit."
+  },
+  "Rosa": {
+    "28": "Lady Dedlock's young maid. Watt Rouncewell is in love with her. Mr. Rouncewell asks if Watt can court her, offending Sir Leicester's aristocratic sensibilities."
+  },
+  "Watt Rouncewell": {
+    "28": "Young son of Mr. Rouncewell the ironmaster. In love with Rosa, Lady Dedlock's maid. His father asks if he can court her."
+  },
+  "Bart Smallweed": {
+    "21": "Grandson of Grandfather Smallweed. Lives with grandparents, learning the family business of usury and greed."
+  },
+  "Grandmother Smallweed": {
+    "21": "Invalid wife of Grandfather Smallweed. Can barely speak, seems senile. Part of the loveless, greedy household."
+  },
+  "Judy Smallweed": {
+    "21": "Granddaughter of Grandfather Smallweed. Lives in the loveless, greedy household."
+  }
+}

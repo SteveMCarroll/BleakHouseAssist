@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Data Load Test</title>
+</head>
+<body>
+    <h1>Data Load Test</h1>
+    <div id="output"></div>
+    
+    <script src="data.js"></script>
+    <script>
+        const output = document.getElementById('output');
+        
+        function log(msg, color = 'black') {
+            const p = document.createElement('p');
+            p.textContent = msg;
+            p.style.color = color;
+            output.appendChild(p);
+            console.log(msg);
+        }
+        
+        log("Script started...");
+        
+        // Check if BLEAK_HOUSE_DATA loaded
+        if (typeof BLEAK_HOUSE_DATA === 'undefined') {
+            log("ERROR: BLEAK_HOUSE_DATA is undefined!", 'red');
+        } else {
+            log("✓ BLEAK_HOUSE_DATA loaded successfully", 'green');
+            
+            // Check chapter 2
+            if (BLEAK_HOUSE_DATA.charactersByChapter && BLEAK_HOUSE_DATA.charactersByChapter[2]) {
+                log("✓ Chapter 2 data exists", 'green');
+                
+                const chapter2 = BLEAK_HOUSE_DATA.charactersByChapter[2];
+                log("Chapter 2 circles: " + Object.keys(chapter2).join(", "));
+                
+                let totalChars = 0;
+                for (const circle in chapter2) {
+                    if (Array.isArray(chapter2[circle])) {
+                        const count = chapter2[circle].length;
+                        totalChars += count;
+                        log(`  ${circle}: ${count} characters`);
+                    }
+                }
+                
+                if (totalChars === 0) {
+                    log("ERROR: Chapter 2 has ZERO characters!", 'red');
+                } else {
+                    log(`✓ Chapter 2 has ${totalChars} total characters`, 'green');
+                }
+            } else {
+                log("ERROR: Chapter 2 charactersByChapter missing!", 'red');
+            }
+            
+            // List what we have
+            log("\nData structure keys: " + Object.keys(BLEAK_HOUSE_DATA).join(", "));
+            
+            if (BLEAK_HOUSE_DATA.chapterContext) {
+                const chapters = Object.keys(BLEAK_HOUSE_DATA.chapterContext);
+                log(`Chapters with context: ${chapters.length} (${chapters[0]} to ${chapters[chapters.length-1]})`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data.js Validation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid;
+        }
+        .test-result.pass {
+            border-color: green;
+            background: #e8f5e9;
+        }
+        .test-result.fail {
+            border-color: red;
+            background: #ffebee;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #666;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .summary {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔬 Bleak House Data.js Validation Test</h1>
+    
+    <div id="results"></div>
+    
+    <script src="data.js"></script>
+    <script>
+        const results = [];
+        
+        function test(name, condition, details = '') {
+            const passed = condition;
+            results.push({ name, passed, details });
+            return passed;
+        }
+        
+        function displayResults() {
+            const container = document.getElementById('results');
+            let html = '';
+            
+            // Test 1: Data loads
+            html += '<div class="test-section"><h2>1. Data Loading</h2>';
+            const dataLoaded = test(
+                'BLEAK_HOUSE_DATA object exists',
+                typeof BLEAK_HOUSE_DATA !== 'undefined'
+            );
+            html += `<div class="test-result ${dataLoaded ? 'pass' : 'fail'}">
+                ${dataLoaded ? '✓ PASS' : '✗ FAIL'}: ${results[0].name}
+            </div>`;
+            html += '</div>';
+            
+            if (!dataLoaded) {
+                container.innerHTML = html;
+                return;
+            }
+            
+            // Test 2: Major data structures exist
+            html += '<div class="test-section"><h2>2. Data Structure Validation</h2>';
+            const structures = [
+                { name: 'majorCharacters', expected: 'array' },
+                { name: 'circleOrder', expected: 'array' },
+                { name: 'chapterContext', expected: 'object' },
+                { name: 'chapterTitles', expected: 'object' },
+                { name: 'charactersByChapter', expected: 'object' },
+                { name: 'chapterSummaries', expected: 'object' },
+                { name: 'characterStories', expected: 'object' }
+            ];
+            
+            structures.forEach(({ name, expected }) => {
+                const exists = BLEAK_HOUSE_DATA.hasOwnProperty(name);
+                const correctType = exists && (
+                    (expected === 'array' && Array.isArray(BLEAK_HOUSE_DATA[name])) ||
+                    (expected === 'object' && typeof BLEAK_HOUSE_DATA[name] === 'object')
+                );
+                test(`${name} exists and is ${expected}`, correctType);
+                html += `<div class="test-result ${correctType ? 'pass' : 'fail'}">
+                    ${correctType ? '✓ PASS' : '✗ FAIL'}: ${name} (expected: ${expected})
+                </div>`;
+            });
+            html += '</div>';
+            
+            // Test 3: All 67 chapters have data
+            html += '<div class="test-section"><h2>3. Chapter Completeness (1-67)</h2>';
+            const chapterTests = [];
+            for (let i = 1; i <= 67; i++) {
+                const hasContext = BLEAK_HOUSE_DATA.chapterContext.hasOwnProperty(i);
+                const hasTitle = BLEAK_HOUSE_DATA.chapterTitles.hasOwnProperty(i);
+                const hasSummary = BLEAK_HOUSE_DATA.chapterSummaries.hasOwnProperty(i);
+                const allPresent = hasContext && hasTitle && hasSummary;
+                chapterTests.push({ chapter: i, passed: allPresent, hasContext, hasTitle, hasSummary });
+            }
+            
+            const allChaptersComplete = chapterTests.every(t => t.passed);
+            test('All 67 chapters have context, title, and summary', allChaptersComplete);
+            
+            html += `<div class="test-result ${allChaptersComplete ? 'pass' : 'fail'}">
+                ${allChaptersComplete ? '✓ PASS' : '✗ FAIL'}: All 67 chapters complete
+            </div>`;
+            
+            const failedChapters = chapterTests.filter(t => !t.passed);
+            if (failedChapters.length > 0) {
+                html += '<div style="margin-top: 10px;"><strong>Missing data for chapters:</strong><br>';
+                failedChapters.forEach(({ chapter, hasContext, hasTitle, hasSummary }) => {
+                    const missing = [];
+                    if (!hasContext) missing.push('context');
+                    if (!hasTitle) missing.push('title');
+                    if (!hasSummary) missing.push('summary');
+                    html += `Chapter ${chapter}: missing ${missing.join(', ')}<br>`;
+                });
+                html += '</div>';
+            }
+            html += '</div>';
+            
+            // Test 4: New summaries (chapters 61-67) are detailed
+            html += '<div class="test-section"><h2>4. New Chapter Summaries (61-67)</h2>';
+            const newChapters = [61, 62, 63, 64, 65, 66, 67];
+            const minLength = 500; // At least 500 chars for detailed summaries
+            
+            newChapters.forEach(ch => {
+                const summary = BLEAK_HOUSE_DATA.chapterSummaries[ch];
+                const isDetailed = summary && summary.length >= minLength;
+                const hasMultipleParagraphs = summary && summary.split('\\n\\n').length >= 2;
+                test(`Chapter ${ch} summary is detailed`, isDetailed && hasMultipleParagraphs);
+                
+                html += `<div class="test-result ${isDetailed && hasMultipleParagraphs ? 'pass' : 'fail'}">
+                    ${isDetailed && hasMultipleParagraphs ? '✓ PASS' : '✗ FAIL'}: 
+                    Chapter ${ch} - ${summary ? summary.length : 0} chars, 
+                    ${summary ? summary.split('\\n\\n').length : 0} paragraphs
+                </div>`;
+            });
+            html += '</div>';
+            
+            // Test 5: Character stories exist
+            html += '<div class="test-section"><h2>5. Character Stories</h2>';
+            const charCount = Object.keys(BLEAK_HOUSE_DATA.characterStories).length;
+            const hasCharacters = charCount > 0;
+            test('Character stories exist', hasCharacters, `${charCount} characters`);
+            
+            html += `<div class="test-result ${hasCharacters ? 'pass' : 'fail'}">
+                ${hasCharacters ? '✓ PASS' : '✗ FAIL'}: ${charCount} characters with story entries
+            </div>`;
+            
+            // Sample a few major characters
+            const sampleChars = ['Esther Summerson', 'Richard Carstone', 'Lady Dedlock'];
+            sampleChars.forEach(char => {
+                const hasStory = BLEAK_HOUSE_DATA.characterStories.hasOwnProperty(char);
+                const entryCount = hasStory ? Object.keys(BLEAK_HOUSE_DATA.characterStories[char]).length : 0;
+                test(`${char} has story entries`, hasStory && entryCount > 0);
+                
+                html += `<div class="test-result ${hasStory && entryCount > 0 ? 'pass' : 'fail'}">
+                    ${hasStory && entryCount > 0 ? '✓ PASS' : '✗ FAIL'}: ${char} - ${entryCount} entries
+                </div>`;
+            });
+            html += '</div>';
+            
+            // Test 6: Sample a specific new summary
+            html += '<div class="test-section"><h2>6. Sample New Summary (Chapter 67)</h2>';
+            const ch67 = BLEAK_HOUSE_DATA.chapterSummaries[67];
+            const ch67Title = BLEAK_HOUSE_DATA.chapterTitles[67];
+            
+            html += `<div><strong>Title:</strong> ${ch67Title}</div>`;
+            html += `<div><strong>Length:</strong> ${ch67.length} characters</div>`;
+            html += `<div><strong>First 200 chars:</strong></div>`;
+            html += `<pre>${ch67.substring(0, 200)}...</pre>`;
+            html += '</div>';
+            
+            // Summary
+            const totalTests = results.length;
+            const passedTests = results.filter(r => r.passed).length;
+            const failedTests = totalTests - passedTests;
+            const allPassed = failedTests === 0;
+            
+            html += `<div class="summary">
+                <h2>Test Summary</h2>
+                <div style="font-size: 24px; margin: 20px 0;">
+                    <span class="${allPassed ? 'pass' : 'fail'}" style="font-size: 36px;">
+                        ${allPassed ? '✓' : '✗'}
+                    </span>
+                    <strong>${passedTests}/${totalTests}</strong> tests passed
+                </div>
+                ${allPassed ? 
+                    '<div class="pass" style="font-size: 18px;">🎉 All tests passed! data.js is valid and loadable.</div>' :
+                    `<div class="fail" style="font-size: 18px;">⚠️ ${failedTests} test(s) failed. Review errors above.</div>`
+                }
+            </div>`;
+            
+            container.innerHTML = html;
+        }
+        
+        displayResults();
+    </script>
+</body>
+</html>
